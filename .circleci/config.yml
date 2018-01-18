@@ -36,4 +36,5 @@ jobs:
           key: v1-dependencies-{{ checksum "composer.json" }}
         
       # run tests!
+      - run: php artisan dusk:install
       - run: php artisan dusk
