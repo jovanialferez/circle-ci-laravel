@@ -28,10 +28,12 @@ jobs:
 
       - run: composer install -n --prefer-dist
 
+      - run: php artisan key:generate
+
       - save_cache:
           paths:
             - ./vendor
           key: v1-dependencies-{{ checksum "composer.json" }}
         
       # run tests!
-      - run: vendor/bin/phpunit
+      - run: php artisan dusk
