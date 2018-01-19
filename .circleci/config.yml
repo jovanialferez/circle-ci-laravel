@@ -36,5 +36,4 @@ jobs:
           key: v1-dependencies-{{ checksum "composer.json" }}
         
       # run tests!
-      - run: php artisan dusk:install
-      - run: php artisan dusk
+      - run: ./vendor/bin/phpunit --bootstrap vendor/autoload.php --debug --colors=always
